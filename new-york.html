@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXURY NEW YORK | Elite Travel Concierge</title>
+    <style>
+        /* Luxury Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        body {
+            background-color: #000;
+            color: #e6e6e6;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .gold-text {
+            color: #D4AF37;
+            font-weight: 500;
+        }
+        
+        /* Luxury Header */
+        .luxury-header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0.9) 70%);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+        
+        .luxury-header h1 {
+            font-size: 5.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .luxury-header h1 span {
+            color: #D4AF37;
+            font-weight: 900;
+            display: inline-block;
+        }
+        
+        .luxury-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .luxury-subtitle:before, .luxury-subtitle:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 1px;
+            background: #D4AF37;
+        }
+        
+        .luxury-subtitle:before {
+            left: -70px;
+        }
+        
+        .luxury-subtitle:after {
+            right: -70px;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-down i {
+            color: #D4AF37;
+            font-size: 2rem;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+        
+        /* Luxury Navigation */
+        .luxury-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all 0.5s ease;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .luxury-nav.scrolled {
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.95);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D4AF37;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .luxury-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .luxury-nav li {
+            margin-left: 3rem;
+        }
+        
+        .luxury-nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .luxury-nav a:hover {
+            color: #D4AF37;
+        }
+        
+        .luxury-nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background: #D4AF37;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .luxury-nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Luxury Main Content */
+        .luxury-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 3rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .section-title .title-decoration {
+            width: 100px;
+            height: 3px;
+            background: #D4AF37;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section-title .title-decoration:before, 
+        .section-title .title-decoration:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #D4AF37;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+        }
+        
+        .section-title .title-decoration:before {
+            left: -20px;
+        }
+        
+        .section-title .title-decoration:after {
+            right: -20px;
+        }
+        
+        /* Luxury Attractions Grid */
+        .luxury-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+        
+        .luxury-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.1);
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+        
+        .luxury-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 60px -15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .card-image {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+        
+        .luxury-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem 2rem 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+        }
+        
+        .card-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .card-overlay p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: #e6e6e6;
+            font-weight: 300;
+        }
+        
+        .luxury-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: #D4AF37;
+            border: 1px solid #D4AF37;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .luxury-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(212, 175, 55, 0.1);
+            transition: all 0.4s;
+        }
+        
+        .luxury-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .luxury-btn:hover:before {
+            left: 100%;
+        }
+        
+        /* Luxury Highlights */
+        .luxury-highlights {
+            background: url('https://images.unsplash.com/photo-1492666673288-3c4b4576ad9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            padding: 8rem 0;
+        }
+        
+        .highlights-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+        }
+        
+        .highlights-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        
+        .highlight-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+        
+        .highlight-item {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.5s;
+        }
+        
+        .highlight-item:hover {
+            border-color: #D4AF37;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+        
+        .highlight-icon {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: #D4AF37;
+        }
+        
+        .highlight-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        
+        .highlight-item p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #b3b3b3;
+        }
+        
+        /* Luxury Testimonials */
+        .luxury-testimonials {
+            padding: 8rem 0;
+        }
+        
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+        
+        .testimonial-slider:before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 3rem;
+            font-size: 10rem;
+            color: rgba(212, 175, 55, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1.5rem;
+            border: 2px solid #D4AF37;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+        
+        .author-info p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: #b3b3b3;
+        }
+        
+        /* Luxury Footer */
+        .luxury-footer {
+            background: #000;
+            padding: 6rem 0 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #D4AF37;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #D4AF37;
+        }
+        
+        .footer-col p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: #b3b3b3;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .footer-links a:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            transition: transform 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #D4AF37;
+        }
+        
+        .footer-links a:hover:before {
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #D4AF37;
+            margin-right: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #D4AF37;
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 5rem auto 0;
+            padding: 2rem 3rem 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .back-to-top {
+            color: #D4AF37;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .back-to-top i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .luxury-header h1 {
+                font-size: 4.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .luxury-header h1 {
+                font-size: 3.5rem;
+            }
+            
+            .luxury-nav li {
+                margin-left: 2rem;
+            }
+            
+            .luxury-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .luxury-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .luxury-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .luxury-subtitle:before, 
+            .luxury-subtitle:after {
+                width: 30px;
+            }
+            
+            .luxury-subtitle:before {
+                left: -40px;
+            }
+            
+            .luxury-subtitle:after {
+                right: -40px;
+            }
+            
+            .nav-container {
+                padding: 0 2rem;
+            }
+            
+            .luxury-nav ul {
+                display: none;
+            }
+            
+            .luxury-container, .highlights-container {
+                padding: 4rem 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .luxury-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .luxury-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .luxury-subtitle {
+                font-size: 1rem;
+            }
+            
+            .luxury-subtitle:before, 
+            .luxury-subtitle:after {
+                display: none;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial-slider {
+                padding: 2rem;
+            }
+            
+            .testimonial-slider:before {
+                left: 1.5rem;
+                font-size: 6rem;
+            }
+            
+            .testimonial-content {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Luxury Navigation -->
+    <nav class="luxury-nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">LUXURY NYC</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Luxury Header -->
+    <header class="luxury-header" id="home">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>NEW YORK <span>REDEFINED</span></h1>
+            <p class="luxury-subtitle">Exclusive access to the most elite experiences in the city that never sleeps</p>
+            <a href="#experiences" class="luxury-btn">Discover More</a>
+        </div>
+        
+    </header>
+    
+    <!-- Luxury Main Content -->
+    <main>
+        <!-- Luxury Experiences Section -->
+        <section class="luxury-container" id="experiences">
+            <div class="section-title">
+                <h2>Elite <span class="gold-text">Experiences</span></h2>
+                <div class="title-decoration"></div>
+                <p>Curated selection of New York's most exclusive offerings for the discerning traveler</p>
+            </div>
+            
+            <div class="luxury-grid">
+                <article class="luxury-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1492666673288-3c4b4576ad9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Manhattan Skyline">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Private Helicopter Tour</h3>
+                        <p>Exclusive aerial views of Manhattan at sunset with champagne service and custom itinerary.</p>
+                        <a href="#" class="luxury-btn">Reserve Now</a>
+                    </div>
+                </article>
+                
+                <article class="luxury-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Broadway">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Broadway VIP Experience</h3>
+                        <p>Premium seats, backstage access, and private meet-and-greets with cast members.</p>
+                        <a href="#" class="luxury-btn">Reserve Now</a>
+                    </div>
+                </article>
+                
+                <article class="luxury-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Michelin Dining">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Michelin Chef's Table</h3>
+                        <p>Private dining with a world-renowned chef at one of New York's most exclusive restaurants.</p>
+                        <a href="#" class="luxury-btn">Reserve Now</a>
+                    </div>
+                </article>
+                
+                <article class="luxury-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1533856493584-0c6ca8ca9ce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Metropolitan Museum">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>After Hours at The Met</h3>
+                        <p>Private evening tour of the Metropolitan Museum with curator-led commentary.</p>
+                        <a href="#" class="luxury-btn">Reserve Now</a>
+                    </div>
+                </article>
+                
+                <article class="luxury-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Central Park">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Central Park Carriage & Caviar</h3>
+                        <p>Luxury horse-drawn carriage ride through Central Park with premium champagne and caviar service.</p>
+                        <a href="#" class="luxury-btn">Reserve Now</a>
+                    </div>
+                </article>
+                
+                <article class="luxury-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Penthouse">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Penthouse Stay</h3>
+                        <p>Luxury accommodations in Manhattan's most exclusive residences with panoramic city views.</p>
+                        <a href="#" class="luxury-btn">Inquire Now</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Luxury Highlights Section -->
+        <section class="luxury-highlights" id="highlights">
+            <div class="highlights-overlay"></div>
+            <div class="highlights-container">
+                <div class="section-title">
+                    <h2>New York <span class="gold-text">Exclusives</span></h2>
+                    <div class="title-decoration"></div>
+                    <p>What makes our New York experience truly unparalleled</p>
+                </div>
+                
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3>Behind-the-Scenes Access</h3>
+                        <p>Private viewings, after-hours entry, and VIP treatment at New York's most iconic institutions.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Celebrity Connections</h3>
+                        <p>Access to elite social circles and private events unavailable to the general public.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h3>24/7 Concierge</h3>
+                        <p>Dedicated personal assistant to handle all requests from restaurant reservations to private jet charters.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Luxury Transport</h3>
+                        <p>Chauffeur-driven fleet including Maybach, Rolls-Royce, and armored SUVs with police escorts when needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Luxury Testimonials -->
+        <section class="luxury-testimonials" id="testimonials">
+            <div class="luxury-container">
+                <div class="section-title">
+                    <h2>Client <span class="gold-text">Testimonials</span></h2>
+                    <div class="title-decoration"></div>
+                    <p>What our distinguished guests say about their New York experience</p>
+                </div>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial-content">
+                        "Luxury NYC showed us a side of New York we never knew existed. From private rooftop dinners overlooking Central Park to backstage at the Metropolitan Opera, every experience was flawlessly executed. Their connections in the city are unparalleled - we got into restaurants that are booked solid for years."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Wilson">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Luxury Footer -->
+    <footer class="luxury-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Luxury NYC</h3>
+                <p>Specializing in exclusive, high-end travel experiences in New York City since 2005.</p>
+                
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Luxury Accommodations</a></li>
+                    <li><a href="#">Private Events</a></li>
+                    <li><a href="#">Celebrity Access</a></li>
+                    <li><a href="#">Personal Shopping</a></li>
+                    <li><a href="#">Security Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>One57, 157 West 57th Street</p>
+                <p>Penthouse 75</p>
+                <p>New York, NY 10019</p>
+                <p>+1 212-555-0100</p>
+                <p>concierge@luxurynyc.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">© 2023 Luxury NYC. All rights reserved.</p>
+            <a href="#home" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
